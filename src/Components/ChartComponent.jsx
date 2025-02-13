@@ -13,15 +13,19 @@ function ChartComponent({ totalIncome, totalExpenses }) {
         data: [totalIncome, totalExpenses],
         backgroundColor: ["#22c55e", "#ef4444"], // Green for income, Red for expense
         hoverBackgroundColor: ["#16a34a", "#dc2626"],
-        borderWidth: 1,
+        borderWidth: 2,
       },
     ],
   };
 
   return (
-    <div className="w-[30%] sm:w-[600px] mx-auto mt-6 p-4 bg-white shadow-lg rounded-lg">
-      <h2 className="text-center text-lg font-bold mb-4">Income vs Expense</h2>
-      <Doughnut data={data} />
+    <div className="w-full max-w-xs sm:max-w-md md:max-w-lg mx-auto mt-6 p-6 bg-white shadow-xl rounded-2xl">
+      <h2 className="text-center text-xl font-semibold mb-4 text-gray-700">
+        Income vs Expense
+      </h2>
+      <div className="flex justify-center">
+        <Doughnut data={data} />
+      </div>
     </div>
   );
 }
